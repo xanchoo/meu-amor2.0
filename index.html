@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Declaração de Amor</title>
+</head>
+<body>
+    <header>
+        <h1>Minha Declaração de Amor</h1>
+    </header>
+    <main>
+        <section class="declaration">
+            <img src="img/nos.jpg" alt="Uma foto especial" class="love-image">
+            <p>Eu amo você mais do que palavras podem expressar!</p>
+        </section>
+        <section class="slider-section">
+            <h2>Quanto eu te amo?</h2>
+            <input type="range" id="loveRange" min="0" max="100" value="50" oninput="updateLovePercentage(this.value)">
+            <p id="lovePercentage">50%</p>
+        </section>
+        <section class="result">
+            <button onclick="checkLove()">Ver Resultado</button>
+            <p id="resultMessage"></p>
+        </section>
+        <section class="hidden-message" id="hiddenMessage">
+            <p>Você é a razão do meu viver, você é a minha paz! ❤️</p>
+        </section>
+    </main>
+    <footer>
+        <p>Uma declaração de amor única para a mulher da minha vida!</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
