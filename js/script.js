@@ -1,24 +1,40 @@
-function updateLovePercentage(value) {
-    document.getElementById('lovePercentage').innerText = value + '%';
-}
+const updateLovePercentage = (value) => {
+	document.querySelector('#lovePercentage').innerText = value + '%';
+};
 
-function checkLove() {
-    const loveValue = document.getElementById('loveRange').value;
-    let message = '';
+const checkLove = () => {
+	const loveValue = document.querySelector('#loveRange').value;
+	let message = '';
+	const firework = document.querySelectorAll('.firework');
 
-    if (loveValue == 100) {
-        message = 'Você acertou! O amor é 100%! ❤️';
-    } else {
-        message = 'Quase lá! Continue tentando!';
-    }
+	if (loveValue == 100) {
+		message = 'Você acertou! O amor é 100%! ❤️';
 
-    document.getElementById('resultMessage').innerText = message;
-}
+		for (let i = 0; i < firework.length; i++) {
+			firework[i].style.display = 'block';
+		}
 
-function showHiddenMessage() {
-    const hiddenMessage = document.getElementById('hiddenMessage');
-    hiddenMessage.style.display = 'block'; // Mostra a mensagem
-}
+         // 
+	} else {
+		for (let i = 0; i < firework.length; i++) {
+			firework[i].style.display = 'none';
+		}
+
+		message = 'Quase lá! Continue tentando!';
+	}
+
+	document.querySelector('#mod').style.display = 'flex';
+	document.querySelector('#resultMessage').innerText = message;
+};
+
+const showHiddenMessage = () => {
+	const hiddenMessage = document.querySelector('#hiddenMessage');
+	hiddenMessage.style.display = 'block'; // Mostra a mensagem
+};
+
+const closeModal = () => {
+	document.querySelector('#mod').style.display = 'none';
+};
 
 // Adiciona um evento ao botão para mostrar a mensagem escondida
 document.querySelector('.result button').addEventListener('click', showHiddenMessage);
